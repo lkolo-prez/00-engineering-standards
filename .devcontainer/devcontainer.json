@@ -2,7 +2,7 @@
   "name": "aircloud engineering-standards (docs)",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
   "features": {
-    "ghcr.io/devcontainers/features/node:1": { "version": "22" },
+    "ghcr.io/devcontainers/features/node:2": { "version": "22" },
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
   "postCreateCommand": "npm install -g markdownlint-cli2 && bash .devcontainer/post-create.sh",
