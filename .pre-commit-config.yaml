@@ -1,0 +1,38 @@
+# Pre-commit hooks that mirror the CI gates locally.
+# Install: pip install pre-commit && pre-commit install
+# Run on all files: pre-commit run --all-files
+minimum_pre_commit_version: "3.7.0"
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: \.md$ # Markdown hard line breaks rely on trailing spaces
+      - id: end-of-file-fixer
+        exclude: ^LICENSE$
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-added-large-files
+        args: [--maxkb=512]
+
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.15.0
+    hooks:
+      - id: markdownlint-cli2
+        args: ["**/*.md"]
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.2
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.42.0
+    hooks:
+      - id: markdownlint
+        # Secondary linter kept off by default; markdownlint-cli2 above is authoritative.
+        stages: [manual]

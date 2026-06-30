@@ -1,0 +1,30 @@
+{
+  "name": "aircloud engineering-standards (docs)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "22" },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "npm install -g markdownlint-cli2 && bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "ChrisChinchilla.vale-vscode",
+        "bierner.markdown-mermaid",
+        "yzhang.markdown-all-in-one",
+        "redhat.vscode-yaml",
+        "EditorConfig.EditorConfig",
+        "GitHub.vscode-github-actions",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.eol": "\n",
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": false
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}

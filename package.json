@@ -1,0 +1,23 @@
+{
+  "name": "@aircloud/engineering-standards",
+  "version": "0.1.0",
+  "private": true,
+  "description": "aircloud engineering handbook: golden paths, security baseline, and AI-assistant standards (docs repo).",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "lint": "markdownlint-cli2 \"**/*.md\"",
+    "lint:fix": "markdownlint-cli2 --fix \"**/*.md\"",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.15.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aircloud/00-engineering-standards.git"
+  }
+}

@@ -1,0 +1,39 @@
+name: release-please
+
+# Automated, Conventional-Commits-driven releases for the handbook.
+# Maintains a Release PR; merging it tags a SemVer release and updates CHANGELOG.md.
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-please-${{ github.ref }}
+  cancel-in-progress: false # never cancel a release in flight
+
+jobs:
+  release-please:
+    name: release-please
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write       # create tags + GitHub Release + CHANGELOG commit
+      pull-requests: write   # open/maintain the Release PR
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@cb605e52c26070c328afc4562f0b4ada7618a84e # v2.10.4
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            uploads.github.com:443
+
+      - name: Run release-please
+        uses: googleapis/release-please-action@d1a8f221d7723166f48a584aebba00ef3f6febec # v4.1.4
+        with:
+          # Config + manifest live at the repo root (see below).
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json

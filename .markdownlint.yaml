@@ -1,0 +1,30 @@
+# markdownlint configuration — https://github.com/DavidAnson/markdownlint
+# Rules reference: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+default: true
+
+# MD013 line-length: prose wraps at 100, but don't punish tables/code/headings.
+MD013:
+  line_length: 100
+  code_blocks: false
+  tables: false
+  headings: false
+
+# MD024 — allow duplicate headings if they're under different parents
+# (e.g. repeated "Consequence" sections in CODE_OF_CONDUCT.md).
+MD024:
+  siblings_only: true
+
+# MD033 — allow the limited inline HTML we use (PR template comments, <br/> in Mermaid labels).
+MD033:
+  allowed_elements:
+    - br
+    - details
+    - summary
+
+# MD041 — first line need not be a top-level heading (front-matter / badges).
+MD041: false
+
+# MD004 — use dashes for unordered lists.
+MD004:
+  style: dash

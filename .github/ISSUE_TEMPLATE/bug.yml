@@ -1,0 +1,52 @@
+name: "Bug / inaccuracy report"
+description: Report an error, broken link, or insecure guidance in the handbook.
+title: "bug: <short description>"
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the handbook correct.
+        **Do not report security vulnerabilities here** — use the private advisory
+        (see SECURITY.md).
+  - type: input
+    id: location
+    attributes:
+      label: Affected document / location
+      description: Which file or section is wrong? Paste the path or a link.
+      placeholder: docs/SECURITY-BASELINE.md → "Control matrix"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: Describe the inaccuracy, broken link, or misleading/insecure guidance.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should it say instead?
+      description: Your suggested correction, if you have one.
+    validations:
+      required: false
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impact
+      options:
+        - Typo / cosmetic
+        - Confusing but not harmful
+        - Could lead to an insecure or non-compliant setup
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submit checks
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: This is NOT a security vulnerability (those go to a private advisory).
+          required: true

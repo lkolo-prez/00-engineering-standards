@@ -1,0 +1,39 @@
+{
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": false,
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100,
+    "files.trimTrailingWhitespace": false
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2
+  },
+  "markdownlint.configFile": ".markdownlint.yaml",
+  "vale.valeCLI.config": "${workspaceFolder}/.vale.ini",
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.yml",
+    "https://json.schemastore.org/github-issue-forms.json": ".github/ISSUE_TEMPLATE/*.yml"
+  },
+  "files.associations": {
+    "*.mdc": "markdown"
+  },
+  "cSpell.words": [
+    "aircloud",
+    "cosign",
+    "Sigstore",
+    "Fulcio",
+    "Rekor",
+    "CycloneDX",
+    "OpenSSF",
+    "Kyverno",
+    "Kustomize",
+    "devcontainer",
+    "lychee",
+    "markdownlint"
+  ]
+}

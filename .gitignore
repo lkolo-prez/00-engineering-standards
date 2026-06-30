@@ -1,0 +1,29 @@
+# Node / tooling caches (docs linting uses Node-based tools)
+node_modules/
+.npm/
+.pnpm-store/
+
+# Tool outputs
+*.sarif
+results.sarif
+.vale/styles/*/   # downloaded Vale style packages
+.cache/
+.lycheecache
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+*.iml
+
+# Local env (there are NO real secrets in this repo; OIDC is used elsewhere)
+.env
+.env.*
+!.env.example
+
+# Build/scratch
+dist/
+tmp/
+*.log

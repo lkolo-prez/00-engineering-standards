@@ -1,0 +1,46 @@
+# Accepted spellings / proper nouns for Vale (case-insensitive regex per line).
+aircloud
+ghcr
+OIDC
+SBOM
+CycloneDX
+cosign
+Sigstore
+Fulcio
+Rekor
+SLSA
+OpenSSF
+Scorecard
+SSDF
+ASVS
+Kyverno
+Argo ?CD
+Kustomize
+Terraform
+tflint
+checkov
+hadolint
+gitleaks
+Trivy
+Semgrep
+CodeQL
+Dependabot
+Renovate
+OpenTelemetry
+OTLP
+OTel
+distroless
+chiseled
+runbook
+runbooks
+trunk-based
+release-please
+Conventional Commits
+SemVer
+STRIDE
+devcontainer
+Codex
+Cursor
+Copilot
+Anthropic
+MCP

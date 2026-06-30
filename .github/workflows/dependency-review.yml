@@ -1,0 +1,42 @@
+name: dependency-review
+
+# Block PRs that introduce vulnerable or disallowed-license dependencies.
+# Relevant here for the dev tooling (Node packages, GitHub Actions) this repo pulls in.
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dependency-review-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dependency-review:
+    name: dependency-review
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      pull-requests: write # to post the summary comment
+    steps:
+      - name: Harden the runner
+        uses: step-security/harden-runner@cb605e52c26070c328afc4562f0b4ada7618a84e # v2.10.4
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Dependency review
+        uses: actions/dependency-review-action@4081bf99e2866ebe428fc0477b69eb4fcda7220a # v4.4.0
+        with:
+          fail-on-severity: high
+          comment-summary-in-pr: on-failure
+          # Allow only OSI-approved, permissive/compatible licenses.
+          allow-licenses: Apache-2.0, MIT, BSD-2-Clause, BSD-3-Clause, ISC, MPL-2.0, CC0-1.0

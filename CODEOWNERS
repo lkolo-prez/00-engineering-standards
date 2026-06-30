@@ -1,0 +1,25 @@
+# CODEOWNERS — required reviewers for the engineering handbook.
+# Order matters: the LAST matching pattern takes precedence.
+# `aircloud` and the team handles below are example placeholders.
+
+# Default owner for everything in the repo.
+*                               @aircloud/platform
+
+# The security baseline and security policy require the security team.
+/docs/SECURITY-BASELINE.md      @aircloud/security
+/docs/THREAT-MODEL-TEMPLATE.md  @aircloud/security
+/SECURITY.md                    @aircloud/security
+
+# AI-assistant standards are co-owned by platform + the AI working group.
+/docs/AI-ASSISTANTS.md          @aircloud/platform @aircloud/ai-wg
+/CLAUDE.md                      @aircloud/platform @aircloud/ai-wg
+/AGENTS.md                      @aircloud/platform @aircloud/ai-wg
+/.github/copilot-instructions.md @aircloud/platform @aircloud/ai-wg
+/.cursor/                       @aircloud/platform @aircloud/ai-wg
+
+# CI/CD and supply-chain workflows: platform + security.
+/.github/workflows/             @aircloud/platform @aircloud/security
+
+# Release/branching process: platform leads.
+/docs/BRANCHING-AND-RELEASE.md  @aircloud/platform
+/docs/BRANCH-PROTECTION.md      @aircloud/platform @aircloud/security

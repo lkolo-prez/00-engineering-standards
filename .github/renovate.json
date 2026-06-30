@@ -1,0 +1,34 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    ":enablePreCommit",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "timezone": "Etc/UTC",
+  "schedule": ["before 7am on monday"],
+  "labels": ["dependencies"],
+  "rangeStrategy": "pin",
+  "commitMessagePrefix": "chore: ",
+  "packageRules": [
+    {
+      "description": "Pin GitHub Actions to digests with a version comment and use the ci: type.",
+      "matchManagers": ["github-actions"],
+      "pinDigests": true,
+      "commitMessagePrefix": "ci: "
+    },
+    {
+      "description": "Group minor/patch dev-tooling updates to reduce PR noise.",
+      "matchManagers": ["npm", "pre-commit"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "dev tooling (non-major)"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "labels": ["security", "dependencies"],
+    "commitMessagePrefix": "fix: "
+  },
+  "osvVulnerabilityAlerts": true,
+  "dependencyDashboard": true
+}

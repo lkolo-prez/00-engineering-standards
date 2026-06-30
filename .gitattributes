@@ -1,0 +1,19 @@
+# Normalize line endings across platforms.
+* text=auto eol=lf
+
+# Explicitly treat docs/config as text.
+*.md       text
+*.yml      text
+*.yaml     text
+*.json     text
+*.mdc      text
+*.toml     text
+Makefile   text
+LICENSE    text
+
+# Keep the license out of language stats / diffs where supported.
+LICENSE       linguist-vendored
+CHANGELOG.md  linguist-generated=true
+
+# Mark this as a docs-dominant repo for GitHub linguist.
+*.md linguist-detectable=true

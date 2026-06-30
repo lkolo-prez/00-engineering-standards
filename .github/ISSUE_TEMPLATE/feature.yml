@@ -1,0 +1,61 @@
+name: "Feature request / RFC"
+description: Propose new guidance, a new golden path, or a change to the security baseline.
+title: "feat: <short description>"
+labels: ["enhancement", "rfc", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for new golden paths, new mandatory controls, or substantial process changes.
+        Substantial proposals are treated as lightweight RFCs.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What problem does this solve? Who is affected?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the guidance/control/template you propose adding or changing.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Golden paths
+        - Security baseline (requires @aircloud/security review)
+        - AI assistants
+        - Branching / release
+        - Observability / incident response
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: rollout
+    attributes:
+      label: Rollout & maintenance plan
+      description: |
+        For new controls/golden paths: enforcement plan, grace period, who maintains it,
+        and the security implications.
+    validations:
+      required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submit checks
+      options:
+        - label: I searched existing issues/RFCs and this is not a duplicate.
+          required: true
+        - label: If this touches the security baseline, I will request @aircloud/security review.
+          required: true
