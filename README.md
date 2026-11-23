@@ -1,10 +1,13 @@
-# Engineering Standards
+<p align="center">
+  <a href="https://aircloud.com.pl"><img src=".github/assets/banner.png" alt="AIRCLOUD: DevOps, cloud and AI engineering" width="100%"></a>
+</p>
 
-> The aircloud Engineering Handbook and the source of truth for our **golden paths**, security baseline, and AI-assistant policy.
+# 00-engineering-standards
 
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/aircloud/00-engineering-standards/badge)](https://securityscorecards.dev/viewer/?uri=github.com/aircloud/00-engineering-standards)
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](./LICENSE)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://www.conventionalcommits.org)
+**Engineering handbook for the AIRCLOUD golden path: paved-road templates, a security baseline and an AI-assistant policy.**
+
+[![docs-lint](https://github.com/lkolo-prez/00-engineering-standards/actions/workflows/docs-lint.yml/badge.svg)](https://github.com/lkolo-prez/00-engineering-standards/actions/workflows/docs-lint.yml)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
 
 > **This is a template repository.** The organization name `aircloud`, the container
 > registry `ghcr.io/aircloud`, and the Azure naming prefix `aircloud` are **examples**.
@@ -13,7 +16,7 @@
 
 ---
 
-## What this repo is
+## What's inside
 
 This repository is **documentation + shared configuration templates**. It is **not** a
 deployable service — there is no application code to run. It defines _how_ we build software
@@ -29,13 +32,13 @@ at aircloud so that every team starts from the same paved road:
 - **Process** — branching, releases, code review, definition of done, observability, and
   incident response.
 
-## How to use the golden paths
+## Usage
 
 1. **Pick a template.** Browse [`CATALOG.md`](./CATALOG.md) and choose the template repo that
    matches your workload (backend TS/Go/Python, Next.js frontend, Terraform/Azure, Argo CD
    GitOps).
 2. **Create your repo from the template.** Use _"Use this template"_ on GitHub, or
-   `gh repo create aircloud/<name> --template aircloud/<template> --private`.
+   `gh repo create <your-org>/<name> --template lkolo-prez/<template> --private`.
 3. **Run the bootstrap.** Each template ships a `make setup` (or `task setup`) target that
    installs tooling, pre-commit hooks, and validates your environment.
 4. **Apply branch protection.** Follow [`docs/BRANCH-PROTECTION.md`](./docs/BRANCH-PROTECTION.md)
@@ -44,6 +47,15 @@ at aircloud so that every team starts from the same paved road:
 5. **Wire AI assistants.** The templates already include `CLAUDE.md`, `AGENTS.md`,
    `.github/copilot-instructions.md`, and `.cursor/rules/` — keep them in sync with the real
    commands in your repo per [`docs/AI-ASSISTANTS.md`](./docs/AI-ASSISTANTS.md).
+
+### Working on this repo
+
+```bash
+make setup      # markdownlint, lychee, vale + pre-commit hooks
+make lint       # markdownlint + vale prose lint
+make linkcheck  # lychee link check
+make test       # lint + linkcheck (what CI runs)
+```
 
 ## Documentation index
 
@@ -72,3 +84,22 @@ from `@aircloud/security`.
 ## License
 
 [Apache-2.0](./LICENSE). © aircloud and contributors.
+
+---
+
+## Part of the AIRCLOUD golden path
+
+| Repository | What it is |
+| --- | --- |
+| **00-engineering-standards** (this repo) | Golden paths, security baseline, AI-assistant policy (handbook) |
+| [template-terraform-azure](https://github.com/lkolo-prez/template-terraform-azure) | Terraform on Azure: private AKS, Key Vault, ACR, OIDC, policy-as-code |
+| [template-gitops-argocd](https://github.com/lkolo-prez/template-gitops-argocd) | Argo CD, Kustomize, Argo Rollouts, Kyverno, External Secrets |
+| [template-backend-python](https://github.com/lkolo-prez/template-backend-python) | FastAPI, Python 3.12, uv, ruff, pytest |
+| [template-backend-go](https://github.com/lkolo-prez/template-backend-go) | Go 1.23, chi, slog, OpenTelemetry, golangci-lint |
+| [template-backend-typescript](https://github.com/lkolo-prez/template-backend-typescript) | Node 22, TypeScript, Fastify 5, Zod, Vitest, pnpm |
+| [template-frontend-nextjs](https://github.com/lkolo-prez/template-frontend-nextjs) | Next.js 15, React 19, Tailwind v4, Playwright, Lighthouse CI |
+| [.github](https://github.com/lkolo-prez/.github) | Reusable CI/CD workflows and community-health defaults |
+
+Terraform modules for Azure: [AIRCLOUD-PL](https://github.com/AIRCLOUD-PL).
+
+Built and maintained by [AIRCLOUD](https://aircloud.com.pl): DevOps, cloud and AI engineering. Need help adopting the golden path? See [aircloud.com.pl/consulting](https://aircloud.com.pl/consulting).
