@@ -15,9 +15,13 @@ MD013:
 MD024:
   siblings_only: true
 
-# MD033 — allow the limited inline HTML we use (PR template comments, <br/> in Mermaid labels).
+# MD033 — allow the limited inline HTML we use (PR template comments, <br/> in Mermaid labels,
+# and the centered Origami banner at the top of README.md: <p><a><img>).
 MD033:
   allowed_elements:
+    - p
+    - a
+    - img
     - br
     - details
     - summary

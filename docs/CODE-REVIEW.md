@@ -29,25 +29,27 @@ This page sets expectations for authors and reviewers.
 
 ## Reviewer checklist
 
-**Correctness**
+### Correctness
 
 - [ ] Does it do what the PR says? Edge cases and error paths handled?
 - [ ] Tests actually exercise the change and would catch a regression.
 
-**Security** (see [`SECURITY-BASELINE.md`](./SECURITY-BASELINE.md))
+### Security
+
+See [`SECURITY-BASELINE.md`](./SECURITY-BASELINE.md).
 
 - [ ] Input validated; output encoded; no injection (SQL/command/template).
 - [ ] AuthZ checks present and least-privilege; no secrets in code or logs.
 - [ ] New dependencies justified and passed dependency-review.
 - [ ] No unpinned GitHub Actions; workflow `permissions` are least-privilege.
 
-**Design & maintainability**
+### Design & maintainability
 
 - [ ] Fits existing patterns; not over-engineered, not under-engineered.
 - [ ] Names are clear; complexity is justified; no obvious duplication.
 - [ ] Observability: relevant logs/metrics/traces added for new behavior.
 
-**Operability**
+### Operability
 
 - [ ] Backward compatible or migration handled; feature-flagged if risky.
 - [ ] Rollback path exists; no irreversible data changes without a plan.

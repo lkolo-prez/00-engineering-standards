@@ -1,5 +1,5 @@
 # Accepted spellings / proper nouns for Vale (case-insensitive regex per line).
-aircloud
+(?i)aircloud
 ghcr
 OIDC
 SBOM
@@ -16,7 +16,7 @@ ASVS
 Kyverno
 Argo ?CD
 Kustomize
-Terraform
+(?i)terraform
 tflint
 checkov
 hadolint
@@ -31,9 +31,8 @@ OTLP
 OTel
 distroless
 chiseled
-runbook
-runbooks
-trunk-based
+(?i)runbooks?
+(?i)trunk-based
 release-please
 Conventional Commits
 SemVer
@@ -44,3 +43,22 @@ Cursor
 Copilot
 Anthropic
 MCP
+# Tooling and jargon used across the handbook.
+(?i)github
+Fastify
+BFFs?
+uv
+typecheck
+Syft
+SLIs?
+creds
+(?i)authz
+semconv
+rootfs
+renderable
+fs
+env
+(?i)comms
+changelogged
+Zod
+(?i)sev

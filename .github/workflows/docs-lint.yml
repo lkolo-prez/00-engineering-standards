@@ -33,6 +33,7 @@ jobs:
             api.github.com:443
             objects.githubusercontent.com:443
             raw.githubusercontent.com:443
+            release-assets.githubusercontent.com:443
 
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -44,12 +45,26 @@ jobs:
             **/*.md
             !LICENSE
 
+      # Vale CLI (pinned + SHA-256) instead of vale-action: the action reports through
+      # reviewdog, which needs checks: write and only annotates PR diffs.
+      - name: Install Vale CLI (checksum-verified)
+        env:
+          VALE_VERSION: 3.28.1
+          VALE_SHA256: 068954ad869ebec24b8dec6ebcd1cbb1fd5f5a83e966a35baedfae8b2cdc093a
+        run: |
+          set -euo pipefail
+          tarball="vale_${VALE_VERSION}_Linux_64-bit.tar.gz"
+          curl -fsSL -o "${RUNNER_TEMP}/${tarball}" \
+            "https://github.com/vale-cli/vale/releases/download/v${VALE_VERSION}/${tarball}"
+          echo "${VALE_SHA256}  ${RUNNER_TEMP}/${tarball}" | sha256sum --check --strict
+          tar -xzf "${RUNNER_TEMP}/${tarball}" -C "${RUNNER_TEMP}" vale
+          "${RUNNER_TEMP}/vale" --version
+
       - name: Vale prose lint
-        uses: errata-ai/vale-action@d89dee975228ae261d22c15adcd03578634d429c # v2.1.1
-        with:
-          files: docs README.md CATALOG.md CONTRIBUTING.md
-          fail_on_error: true
-          reporter: github-pr-check
+        run: |
+          "${RUNNER_TEMP}/vale" sync
+          "${RUNNER_TEMP}/vale" --minAlertLevel=error --output=line \
+            docs README.md CATALOG.md CONTRIBUTING.md
 
   link-check:
     name: link-check

@@ -28,7 +28,7 @@ malicious content in templates.
 Our machine-readable contact info follows [RFC 9116](https://www.rfc-editor.org/rfc/rfc9116)
 and is published at:
 
-```
+```text
 https://aircloud.example/.well-known/security.txt
 ```
 

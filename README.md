@@ -1,10 +1,14 @@
 <p align="center">
-  <a href="https://aircloud.com.pl"><img src=".github/assets/banner.png" alt="AIRCLOUD: DevOps, cloud and AI engineering" width="100%"></a>
+  <a href="https://aircloud.com.pl">
+    <img src=".github/assets/banner.png" alt="AIRCLOUD: DevOps, cloud and AI engineering"
+      width="100%">
+  </a>
 </p>
 
 # 00-engineering-standards
 
-**Engineering handbook for the AIRCLOUD golden path: paved-road templates, a security baseline and an AI-assistant policy.**
+**Engineering handbook for the AIRCLOUD golden path: paved-road templates, a security baseline
+and an AI-assistant policy.**
 
 [![docs-lint](https://github.com/lkolo-prez/00-engineering-standards/actions/workflows/docs-lint.yml/badge.svg)](https://github.com/lkolo-prez/00-engineering-standards/actions/workflows/docs-lint.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
@@ -102,4 +106,6 @@ from `@aircloud/security`.
 
 Terraform modules for Azure: [AIRCLOUD-PL](https://github.com/AIRCLOUD-PL).
 
-Built and maintained by [AIRCLOUD](https://aircloud.com.pl): DevOps, cloud and AI engineering. Need help adopting the golden path? See [aircloud.com.pl/consulting](https://aircloud.com.pl/consulting).
+Built and maintained by [AIRCLOUD](https://aircloud.com.pl): DevOps, cloud and AI engineering.
+Need help adopting the golden path? See
+[aircloud.com.pl/consulting](https://aircloud.com.pl/consulting).

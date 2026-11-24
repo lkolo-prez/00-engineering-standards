@@ -7,7 +7,7 @@ This repository is **documentation + shared configuration**, not a runnable serv
 
 ## Repository structure
 
-```
+```text
 00-engineering-standards/
 ├── README.md                     # Entry point: what this is + how to use golden paths
 ├── CATALOG.md                    # Index of all template repos
@@ -102,10 +102,12 @@ sequenceDiagram
 2. **Edit** the relevant file under `docs/` (or a root governance file). Keep lines wrapped,
    tables valid, and links relative.
 3. **Lint locally:**
+
    ```bash
    make lint      # markdownlint + vale (or: npx markdownlint-cli2 "**/*.md")
    make linkcheck # lychee link check (if installed)
    ```
+
 4. **Commit** with a Conventional Commit, signed:
    `git commit -S -m "docs: clarify cosign keyless signing in security baseline"`.
 5. **Open a PR.** CI runs `docs-lint` and `scorecard` (required checks).

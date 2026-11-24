@@ -6,7 +6,9 @@ node_modules/
 # Tool outputs
 *.sarif
 results.sarif
-.vale/styles/*/   # downloaded Vale style packages
+# Downloaded Vale style packages (keep the tracked vocabulary in config/).
+.vale/styles/*/
+!.vale/styles/config/
 .cache/
 .lycheecache
 

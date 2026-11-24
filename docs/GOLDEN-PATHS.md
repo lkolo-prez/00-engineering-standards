@@ -38,9 +38,9 @@ Every template, regardless of stack, provides:
 
 ## Backend
 
-Templates: [`template-backend-typescript`](https://github.com/aircloud/template-backend-typescript),
-[`template-backend-go`](https://github.com/aircloud/template-backend-go),
-[`template-backend-python`](https://github.com/aircloud/template-backend-python).
+Templates: [`template-backend-typescript`](https://github.com/lkolo-prez/template-backend-typescript),
+[`template-backend-go`](https://github.com/lkolo-prez/template-backend-go),
+[`template-backend-python`](https://github.com/lkolo-prez/template-backend-python).
 
 **Choose:**
 
@@ -66,7 +66,7 @@ flowchart LR
 
 ## Frontend
 
-Template: [`template-frontend-nextjs`](https://github.com/aircloud/template-frontend-nextjs).
+Template: [`template-frontend-nextjs`](https://github.com/lkolo-prez/template-frontend-nextjs).
 
 **Choose it for:** web apps, internal dashboards, marketing sites. Next.js 15 (App Router),
 React 19, TypeScript strict, Tailwind, Playwright E2E, Vitest unit, Storybook optional.
@@ -77,7 +77,7 @@ Auth via the org IdP using OIDC/OAuth 2.1 with PKCE — no secrets in the browse
 
 ## Infrastructure as Code (IaC)
 
-Template: [`template-terraform-azure`](https://github.com/aircloud/template-terraform-azure).
+Template: [`template-terraform-azure`](https://github.com/lkolo-prez/template-terraform-azure).
 
 **Choose it for:** any Azure infrastructure. Terraform 1.9, remote state in Azure Storage with
 state locking, OIDC auth (`azure/login` + federated credentials, **no client secrets**),
@@ -90,7 +90,7 @@ signed and attested.
 
 ## GitOps
 
-Template: [`template-gitops-argocd`](https://github.com/aircloud/template-gitops-argocd).
+Template: [`template-gitops-argocd`](https://github.com/lkolo-prez/template-gitops-argocd).
 
 **Choose it for:** delivering apps to Kubernetes. Argo CD app-of-apps, Kustomize bases +
 overlays per environment (`dev`/`staging`/`prod`), Helm for third-party charts, Kyverno admission

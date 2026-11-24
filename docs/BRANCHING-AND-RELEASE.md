@@ -41,7 +41,7 @@ Example: `feat/oidc-login`, `fix/null-pointer-on-empty-cart`.
 
 Every commit message follows [Conventional Commits 1.0.0](https://www.conventionalcommits.org):
 
-```
+```text
 <type>[optional scope][!]: <description>
 
 [optional body]
@@ -59,7 +59,7 @@ Every commit message follows [Conventional Commits 1.0.0](https://www.convention
 
 Examples:
 
-```
+```text
 feat(auth): add OIDC login via Azure Entra ID
 fix(cart): prevent negative quantities
 refactor!: drop Node 18 support

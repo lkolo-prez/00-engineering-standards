@@ -20,11 +20,13 @@ config**, so contributions are mostly Markdown edits and CI/config tweaks.
 2. **Branch:** `git switch -c docs/<topic>` (or `ci/`, `chore/`).
 3. **Edit** the relevant file(s). Keep changes focused and cross-link related docs.
 4. **Lint locally:**
+
    ```bash
    make lint        # markdownlint + vale
    make linkcheck   # lychee link check
    make test        # both of the above
    ```
+
 5. **Commit** (signed, Conventional):
    `git commit -S -m "docs: clarify SLSA provenance requirement"`.
 6. **Open a PR** filling in the template. CI runs `docs-lint` and `scorecard` (required checks).
