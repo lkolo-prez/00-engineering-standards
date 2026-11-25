@@ -1,6 +1,6 @@
 # Security Policy
 
-aircloud takes security seriously, including for this documentation repository. Because this
+AIRCLOUD takes security seriously, including for this documentation repository. Because this
 repo defines the org-wide [security baseline](./docs/SECURITY-BASELINE.md), accuracy here is
 itself a security control.
 
@@ -15,8 +15,7 @@ Report privately via one of:
 1. **GitHub Private Vulnerability Reporting** — preferred. On this repo: **Security → Report a
    vulnerability** (GitHub Security Advisories). This keeps the report private until a fix is
    ready.
-2. **Email** — `security@aircloud.example` (PGP key fingerprint published at the URL in our
-   `security.txt`). Encrypt sensitive details.
+2. **Email** — `office@aircloud.com.pl`.
 
 Please include: affected file/area, a clear description, reproduction or proof-of-concept, and
 the impact you foresee. For this docs repo, "vulnerabilities" include guidance that would lead
@@ -29,7 +28,7 @@ Our machine-readable contact info follows [RFC 9116](https://www.rfc-editor.org/
 and is published at:
 
 ```text
-https://aircloud.example/.well-known/security.txt
+https://aircloud.com.pl/.well-known/security.txt
 ```
 
 It points back to this policy and the reporting channels above.
